@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FathersAlbum.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="APIkey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DxkWvW5h8stcngWzUmO1r07G</Value>
+    </Setting>
+    <Setting Name="Secretkey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">7d0v9fuGfMKv0k2HV029ksx6vbAqqgby</Value>
+    </Setting>
+    <Setting Name="access_token" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
