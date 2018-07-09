@@ -11,5 +11,8 @@
     <Setting Name="access_token" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="AppID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">11505139</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

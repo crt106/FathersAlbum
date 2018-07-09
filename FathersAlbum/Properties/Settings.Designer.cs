@@ -52,5 +52,14 @@ namespace FathersAlbum.Properties {
                 this["access_token"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("11505139")]
+        public string AppID {
+            get {
+                return ((string)(this["AppID"]));
+            }
+        }
     }
 }

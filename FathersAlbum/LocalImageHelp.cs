@@ -120,8 +120,8 @@ namespace FathersAlbum
         /// <summary>
         /// 将给定路径的(图片)文件转换成base64字符串
         /// </summary>
-        /// <param name="Filepath"></param>
-        /// <returns></returns>
+        /// <param name="Filepath">源文件路径</param>
+        /// <returns>返回的字符串</returns>
         public static string Image2Base64str(string Filepath)
         {
             FileInfo imageInfo=new FileInfo(Filepath);                      //读取文件信息
