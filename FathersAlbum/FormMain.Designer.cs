@@ -35,25 +35,37 @@
             this.添加待分类文件夹ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设置输出目录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.treeView_group = new System.Windows.Forms.TreeView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label_choosedFace = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listView_folder = new System.Windows.Forms.ListView();
+            this.imageList_folder = new System.Windows.Forms.ImageList(this.components);
             this.btn_folder_clear = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxOutpath = new System.Windows.Forms.TextBox();
             this.btn_outpath = new System.Windows.Forms.Button();
             this.btn_start = new System.Windows.Forms.Button();
-            this.imageList_folder = new System.Windows.Forms.ImageList(this.components);
-            this.treeView_group = new System.Windows.Forms.TreeView();
-            this.label_choosedFace = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.ListviewMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.删除选定项目ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TreeViewMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.添加分组ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.添加人物ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除该分组ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除该人物ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.修改该人物ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.ListviewMenu.SuspendLayout();
+            this.TreeViewMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenu
@@ -107,6 +119,33 @@
             this.splitContainer1.SplitterWidth = 10;
             this.splitContainer1.TabIndex = 1;
             // 
+            // treeView_group
+            // 
+            this.treeView_group.ContextMenuStrip = this.TreeViewMenu;
+            this.treeView_group.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView_group.Location = new System.Drawing.Point(0, 0);
+            this.treeView_group.Name = "treeView_group";
+            this.treeView_group.Size = new System.Drawing.Size(137, 379);
+            this.treeView_group.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 56);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(191, 216);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label_choosedFace
+            // 
+            this.label_choosedFace.AutoSize = true;
+            this.label_choosedFace.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_choosedFace.Location = new System.Drawing.Point(14, 19);
+            this.label_choosedFace.Name = "label_choosedFace";
+            this.label_choosedFace.Size = new System.Drawing.Size(104, 16);
+            this.label_choosedFace.TabIndex = 10;
+            this.label_choosedFace.Text = "当前选择人物";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -130,14 +169,22 @@
             // listView_folder
             // 
             this.listView_folder.Alignment = System.Windows.Forms.ListViewAlignment.Default;
+            this.listView_folder.ContextMenuStrip = this.ListviewMenu;
             this.listView_folder.LargeImageList = this.imageList_folder;
             this.listView_folder.Location = new System.Drawing.Point(424, 74);
+            this.listView_folder.MultiSelect = false;
             this.listView_folder.Name = "listView_folder";
             this.listView_folder.Size = new System.Drawing.Size(313, 188);
             this.listView_folder.SmallImageList = this.imageList_folder;
             this.listView_folder.StateImageList = this.imageList_folder;
             this.listView_folder.TabIndex = 4;
             this.listView_folder.UseCompatibleStateImageBehavior = false;
+            // 
+            // imageList_folder
+            // 
+            this.imageList_folder.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList_folder.ImageStream")));
+            this.imageList_folder.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList_folder.Images.SetKeyName(0, "folder");
             // 
             // btn_folder_clear
             // 
@@ -187,41 +234,84 @@
             this.btn_start.Text = "开始分类";
             this.btn_start.UseVisualStyleBackColor = true;
             // 
-            // imageList_folder
-            // 
-            this.imageList_folder.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList_folder.ImageStream")));
-            this.imageList_folder.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList_folder.Images.SetKeyName(0, "folder");
-            // 
-            // treeView_group
-            // 
-            this.treeView_group.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView_group.Location = new System.Drawing.Point(0, 0);
-            this.treeView_group.Name = "treeView_group";
-            this.treeView_group.Size = new System.Drawing.Size(137, 379);
-            this.treeView_group.TabIndex = 0;
-            // 
-            // label_choosedFace
-            // 
-            this.label_choosedFace.AutoSize = true;
-            this.label_choosedFace.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_choosedFace.Location = new System.Drawing.Point(14, 19);
-            this.label_choosedFace.Name = "label_choosedFace";
-            this.label_choosedFace.Size = new System.Drawing.Size(104, 16);
-            this.label_choosedFace.TabIndex = 10;
-            this.label_choosedFace.Text = "当前选择人物";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 56);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(191, 216);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // folderBrowserDialog
             // 
             this.folderBrowserDialog.Description = "选择待分类文件夹";
+            this.folderBrowserDialog.RootFolder = System.Environment.SpecialFolder.MyComputer;
+            // 
+            // ListviewMenu
+            // 
+            this.ListviewMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.删除选定项目ToolStripMenuItem});
+            this.ListviewMenu.Name = "ListviewMenu";
+            this.ListviewMenu.Size = new System.Drawing.Size(149, 26);
+            // 
+            // 删除选定项目ToolStripMenuItem
+            // 
+            this.删除选定项目ToolStripMenuItem.Name = "删除选定项目ToolStripMenuItem";
+            this.删除选定项目ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.删除选定项目ToolStripMenuItem.Text = "删除选定项目";
+            this.删除选定项目ToolStripMenuItem.Click += new System.EventHandler(this.删除选定项目ToolStripMenuItem_Click);
+            // 
+            // TreeViewMenu
+            // 
+            this.TreeViewMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.添加分组ToolStripMenuItem,
+            this.添加人物ToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.删除该分组ToolStripMenuItem,
+            this.删除该人物ToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.修改该人物ToolStripMenuItem});
+            this.TreeViewMenu.Name = "TreeViewMenu";
+            this.TreeViewMenu.Size = new System.Drawing.Size(146, 126);
+            this.TreeViewMenu.Layout += new System.Windows.Forms.LayoutEventHandler(this.TreeViewMenu_Layout);
+            // 
+            // 添加分组ToolStripMenuItem
+            // 
+            this.添加分组ToolStripMenuItem.Name = "添加分组ToolStripMenuItem";
+            this.添加分组ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.添加分组ToolStripMenuItem.Text = "添加分组...";
+            this.添加分组ToolStripMenuItem.Visible = false;
+            this.添加分组ToolStripMenuItem.Click += new System.EventHandler(this.添加分组ToolStripMenuItem_Click);
+            // 
+            // 添加人物ToolStripMenuItem
+            // 
+            this.添加人物ToolStripMenuItem.Name = "添加人物ToolStripMenuItem";
+            this.添加人物ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.添加人物ToolStripMenuItem.Text = "添加人物...";
+            this.添加人物ToolStripMenuItem.Visible = false;
+            // 
+            // 删除该分组ToolStripMenuItem
+            // 
+            this.删除该分组ToolStripMenuItem.Name = "删除该分组ToolStripMenuItem";
+            this.删除该分组ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.删除该分组ToolStripMenuItem.Text = "删除该分组...";
+            this.删除该分组ToolStripMenuItem.Visible = false;
+            // 
+            // 删除该人物ToolStripMenuItem
+            // 
+            this.删除该人物ToolStripMenuItem.Name = "删除该人物ToolStripMenuItem";
+            this.删除该人物ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.删除该人物ToolStripMenuItem.Text = "删除该人物...";
+            this.删除该人物ToolStripMenuItem.Visible = false;
+            // 
+            // 修改该人物ToolStripMenuItem
+            // 
+            this.修改该人物ToolStripMenuItem.Name = "修改该人物ToolStripMenuItem";
+            this.修改该人物ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.修改该人物ToolStripMenuItem.Text = "修改该人物...";
+            this.修改该人物ToolStripMenuItem.Visible = false;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // FormMain
             // 
@@ -239,7 +329,8 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.MainMenu);
             this.MainMenuStrip = this.MainMenu;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "主界面";
             this.MainMenu.ResumeLayout(false);
@@ -250,6 +341,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ListviewMenu.ResumeLayout(false);
+            this.TreeViewMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,6 +368,16 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label_choosedFace;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
+        private System.Windows.Forms.ContextMenuStrip ListviewMenu;
+        private System.Windows.Forms.ToolStripMenuItem 删除选定项目ToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip TreeViewMenu;
+        private System.Windows.Forms.ToolStripMenuItem 添加分组ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 添加人物ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem 删除该分组ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 删除该人物ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem 修改该人物ToolStripMenuItem;
     }
 }
 

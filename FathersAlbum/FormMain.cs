@@ -55,6 +55,23 @@ namespace FathersAlbum
         }
 
         /// <summary>
+        /// 选择文件夹Listview右键删除文件夹时的操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 删除选定项目ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView_folder.SelectedIndices.Count != 0)
+            {
+                foreach (var index in listView_folder.SelectedIndices)
+                {
+                    ChoosedFolderList.RemoveAt((int)index);    
+                }
+                RefreshFolderListview();
+            }
+        }
+
+        /// <summary>
         /// 设置输出目录
         /// </summary>
         /// <param name="sender"></param>
@@ -68,6 +85,40 @@ namespace FathersAlbum
                 textBoxOutpath.Text = OutputPath;
             }
         }
+
+        /// <summary>
+        /// TreeViewMenu展开的时候根据不同状况修改菜单内容
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TreeViewMenu_Layout(object sender, LayoutEventArgs e)
+        {
+            //如果没有选到结点则只有添加分组
+            if (treeView_group.SelectedNode == null)
+            {
+                添加分组ToolStripMenuItem.Visible = true;
+            }
+            else if(treeView_group.SelectedNode.Level==0)
+            {
+                
+            }
+        }
+
+        #region TreeViewMenu各个小项的按钮事件
+        /// <summary>
+        /// 添加分组
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 添加分组ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
+        #endregion
+
+
         #endregion
 
         /// <summary>
