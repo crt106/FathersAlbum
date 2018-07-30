@@ -94,6 +94,7 @@
             this.textBox_GroupID.Name = "textBox_GroupID";
             this.textBox_GroupID.Size = new System.Drawing.Size(192, 21);
             this.textBox_GroupID.TabIndex = 6;
+            this.textBox_GroupID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_GroupID_KeyPress);
             // 
             // FormAddGroup
             // 
