@@ -40,21 +40,24 @@
             // 
             this.btn_addg_ok.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_addg_ok.Location = new System.Drawing.Point(76, 110);
+            this.btn_addg_ok.Location = new System.Drawing.Point(114, 165);
+            this.btn_addg_ok.Margin = new System.Windows.Forms.Padding(4);
             this.btn_addg_ok.Name = "btn_addg_ok";
-            this.btn_addg_ok.Size = new System.Drawing.Size(74, 23);
+            this.btn_addg_ok.Size = new System.Drawing.Size(111, 34);
             this.btn_addg_ok.TabIndex = 0;
             this.btn_addg_ok.Text = "添加";
             this.btn_addg_ok.UseVisualStyleBackColor = true;
+            this.btn_addg_ok.Click += new System.EventHandler(this.btn_addg_ok_Click);
             // 
             // btn_addg_cancel
             // 
             this.btn_addg_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_addg_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_addg_cancel.Location = new System.Drawing.Point(238, 110);
+            this.btn_addg_cancel.Location = new System.Drawing.Point(357, 165);
+            this.btn_addg_cancel.Margin = new System.Windows.Forms.Padding(4);
             this.btn_addg_cancel.Name = "btn_addg_cancel";
-            this.btn_addg_cancel.Size = new System.Drawing.Size(74, 23);
+            this.btn_addg_cancel.Size = new System.Drawing.Size(111, 34);
             this.btn_addg_cancel.TabIndex = 1;
             this.btn_addg_cancel.Text = "取消";
             this.btn_addg_cancel.UseVisualStyleBackColor = true;
@@ -64,50 +67,56 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(27, 25);
+            this.label1.Location = new System.Drawing.Point(40, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "组名称";
             // 
             // textBox_Groupname
             // 
-            this.textBox_Groupname.Location = new System.Drawing.Point(96, 22);
+            this.textBox_Groupname.Location = new System.Drawing.Point(144, 33);
+            this.textBox_Groupname.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Groupname.Name = "textBox_Groupname";
-            this.textBox_Groupname.Size = new System.Drawing.Size(240, 21);
+            this.textBox_Groupname.Size = new System.Drawing.Size(358, 28);
             this.textBox_Groupname.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(27, 60);
+            this.label2.Location = new System.Drawing.Point(40, 90);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.Size = new System.Drawing.Size(139, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "组ID(仅ASCII)";
             // 
             // textBox_GroupID
             // 
             this.textBox_GroupID.AsciiOnly = true;
-            this.textBox_GroupID.Location = new System.Drawing.Point(144, 56);
+            this.textBox_GroupID.Location = new System.Drawing.Point(216, 84);
+            this.textBox_GroupID.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_GroupID.Name = "textBox_GroupID";
-            this.textBox_GroupID.Size = new System.Drawing.Size(192, 21);
+            this.textBox_GroupID.Size = new System.Drawing.Size(286, 28);
             this.textBox_GroupID.TabIndex = 6;
+            this.textBox_GroupID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_GroupID_KeyPress);
             // 
             // FormAddGroup
             // 
             this.AcceptButton = this.btn_addg_ok;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_addg_cancel;
-            this.ClientSize = new System.Drawing.Size(395, 145);
+            this.ClientSize = new System.Drawing.Size(592, 218);
             this.Controls.Add(this.textBox_GroupID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_Groupname);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_addg_cancel);
             this.Controls.Add(this.btn_addg_ok);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormAddGroup";

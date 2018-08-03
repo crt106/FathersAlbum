@@ -30,7 +30,7 @@ namespace FathersAlbum
             FileInfo firstFileInfo = new FileInfo(sFile);
             if (sfsc == true && firstFileInfo.Length < size * 1024)
             {
-                firstFileInfo.CopyTo(dFile);
+                firstFileInfo.CopyTo(dFile,true);
                 return true;
             }
             Image iSource = Image.FromFile(sFile);
@@ -134,5 +134,19 @@ namespace FathersAlbum
             return base64str;
         }
 
+        /// <summary>
+        /// 将指定的base64字符串转换为bitmap
+        /// </summary>
+        /// <param name="base64str"></param>
+        /// <returns></returns>
+        public static Bitmap Base64str2Image(string base64str)
+        {
+            byte[] strarr = Convert.FromBase64String(base64str);
+            using (MemoryStream me = new MemoryStream(strarr))
+            {
+                Bitmap tmp = new Bitmap(me);
+                return tmp;
+            }
+        }
     }
 }

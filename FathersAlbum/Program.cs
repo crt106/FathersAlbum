@@ -8,6 +8,7 @@ namespace FathersAlbum
 {
     static class Program
     {
+        
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
@@ -16,8 +17,8 @@ namespace FathersAlbum
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
-            BaiduAI tmp=new BaiduAI();      //初始化百度AI类
+            Application.Run(FormMain.GetInstance());
+            
         }
     }
 }

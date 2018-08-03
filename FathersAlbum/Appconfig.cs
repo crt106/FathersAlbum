@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Configuration;
+using System.Windows.Forms.VisualStyles;
 
 //注意需要引用 System.Configuration
+
 /// <summary>
 /// 管理程序设置的类
 /// </summary>
@@ -12,7 +14,7 @@ namespace FathersAlbum
 
     public class AppConfig
     {
-        private static Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+        private static Configuration config;
 
         /// <summary>
         /// 获取
@@ -21,40 +23,22 @@ namespace FathersAlbum
         /// <returns></returns>
         public static string GetValue(string key)
         {
-            string strReturn = null;
-            if (config.AppSettings.Settings[key] != null)
-            {
-                strReturn = config.AppSettings.Settings[key].Value;
-            }
+            string strReturn = (string)Properties.Settings.Default[key];
             return strReturn;
         }
 
         /// <summary>
-        /// 设置
+        /// 修改设置
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
         public static void SetValue(string key, string value)
         {
-            if (config.AppSettings.Settings[key] != null)
-            {
-                config.AppSettings.Settings[key].Value = value;
-            }
-            else
-            {
-                config.AppSettings.Settings.Add(key, value);
-            }
-            config.Save(ConfigurationSaveMode.Modified);
+            if (Properties.Settings.Default[key] != null) 
+            Properties.Settings.Default[key] = value;
         }
 
-        /// <summary>
-        /// 删除
-        /// </summary>
-        /// <param name="key"></param>
-        public static void DelValue(string key)
-        {
-            config.AppSettings.Settings.Remove(key);
-        }
+        
     }
 }
 
